@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    transition: all 300ms ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: end;
+    background-color: #233053;
+    padding: 20px;
+    border-radius: 10px;
+    width: 310px;
+}
+
+.display {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+    overflow-wrap: break-word;
+    transition: all 300ms ease;
+}
+
+.memory {
+    border-bottom: 1px solid gray;
+    padding: 8px;
+    color:#a5b1c2;
+}
+
+.output {
+    font-size: 50px;
+    padding: 20px 0;
+    color: #ffff;
+    transform: scale(1, 1.4);
+}
+
+#keys-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows:  repeat(5, 70px);
+}
+
+button {
+    font-size: 30px;
+    font-weight: 200;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #ffff;
+}
+
+.key-equal {
+    height: 150px;
+    border-radius: 50px;
+    border: none;
+    background-color: #2e4070;
+    color: #a5b1c2;
+}
+
+.add,
+.subtract,
+.multiply {
+    border-radius: 70px;
+    border: none;
+    background-color: #2e4070;
+    color: #a5b1c2;
+}
+
+.num_key,
+.dot,
+.key-del {
+    color:#a5b1c2;
+}
+
+.light-color {
+    color: #3a559e;
+}
+
+.light-color:hover {
+    color: #284491;
+}
+
+.switch {
+    position: absolute;
+    height: 14px;
+    width: 30px;
+    background-color: aliceblue;
+    border-radius: 50px;
+}
+
+.switch-btn {
+    width: 15px;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #1d1d1d;
+    cursor: pointer;
+    border: 2px solid lightgray;
+    transition: all 300ms ease;
+}
+
+/* classlist */
+.currentOperator {
+    background-color: #284491;
+}
+
+.darkMode {
+    transform: translateX(100%);
+}
+
+.backgroundChange {
+    background-color: #000;
+}
