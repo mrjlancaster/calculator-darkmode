@@ -2,7 +2,6 @@ const appContainer = document.querySelector('.app');
 const output = document.querySelector('.output');
 const display = document.querySelector('.display');
 const memory = document.querySelector('.memory');
-const clearButton = document.querySelector('.clear');
 const keys = document.getElementById('keys-container');
 
 output.innerText = 0; // output default value
