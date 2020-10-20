@@ -37,7 +37,42 @@ keys.addEventListener('click', (e) => {
 
     // decimal
     if ( action === 'decimal') {
-        console.log('decimal key');
+        const dot = key.innerText;
+        if (!output.innerText.include(dot)) {
+            output.innerText = output.innerText + dot;
+        }
+    }
+
+    // calculate (equals)
+    if (action === 'calculate') {
+        const firstValue = output.innerText;
+        const operator = display.dataset.operator;
+        const secondValue = memory.innerText;
+
+        if (output.innerText === '0') {
+            return false;
+        }
+
+        // calculating function
+        function calc (num1, operator, num2) {
+            let total;
+
+            if (operator === 'addition') {
+                total = parseFloat(num1) + parseFloat(num2);
+            } else if (operator === 'subtract') {
+                total = parseFloat(num1) - parseFloat(num2);
+            } else if (operator === 'multiplication') {
+                total = parseFloat(num1) * parseFloat(num2);
+            } else if (operator === 'division') {
+                total = parseFloat(num1) / parseFloat(num2)
+            }
+
+            return total;
+        }
+
+        memory.innerText = 0;
+        const result = calc(firstValue, operator, secondValue);
+        output.innerText = result;
     }
 
     // clear
@@ -48,6 +83,20 @@ keys.addEventListener('click', (e) => {
 
     // delete
     if (action === 'delete') {
-        console.log('delete key');
+        const updatedOutput = output.innerText.toString().slice(0, -1);
+
+        if (updatedOutput.length === 0) {
+            output.innerText = 0;
+        } else {
+            output.innerText = updatedOutput;
+        }
     }
+})
+
+// switch dark mode
+const switchBtn = document.querySelector('.switch-btn');
+
+switchBtn.addEventListener('click', (e) => {
+    e.target.classList.toggle('darkMode');
+    appContainer.classList.toggle('backgroundChange');
 })
