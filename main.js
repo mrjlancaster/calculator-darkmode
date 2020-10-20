@@ -93,10 +93,7 @@ keys.addEventListener('click', (e) => {
                 output.innerText = updatedOutput;
             }
         }
-    } else {
-        return false;
     }
-
 })
 
 // switch dark mode
