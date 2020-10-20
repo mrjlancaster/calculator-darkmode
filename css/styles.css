@@ -117,10 +117,6 @@ button:hover {
 }
 
 /* classlist */
-.currentOperator {
-    background-color: #284491;
-}
-
 .darkMode {
     transform: translateX(100%);
 }
